@@ -11,6 +11,9 @@ gem 'propshaft'
 gem 'puma', '>= 5.0'
 gem 'stimulus-rails'
 gem 'turbo-rails'
+gem 'dotenv-rails', require: 'dotenv/rails-now'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
 
 gem 'tzinfo-data', platforms: %i[windows jruby]
 

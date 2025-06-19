@@ -15,4 +15,18 @@
     = stylesheet_link_tag :app, "data-turbo-track": "reload"
     = javascript_include_tag "application", "data-turbo-track": "reload", type: "module"
   %body
-    = yield
+    %nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      = link_to root_path, class: 'navbar-brand' do
+        %button.navbar-toggler{"aria-controls" => "navbarNav", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNav", "data-toggle" => "collapse", :type => "button"}
+          %span.navbar-toggler-icon
+        #navbarNav.collapse.navbar-collapse
+          %ul.navbar-nav
+            %li.nav-item
+              -# = link_to '書籍一覧', books_path, class: 'nav-link'
+            %li.nav-item
+              -# = link_to 'ユーザー一覧', users_path, class: 'nav-link'
+        - if current_user
+          %div.justify-content-end
+            = link_to 'ログアウト', signout_path, class:"btn btn-secondary", data: { turbo_method: :delete }
+    .container
+      = yield
